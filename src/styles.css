@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #24242D;
+
+  box-sizing: border-box;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  padding-top: 32px;
+}
+
+body, header {
+  font-family: 'Nunito', sans-serif;
+}
+
+.navbar {
+  font-family: 'Nunito', sans-serif;
+  top: 0;
+  position: sticky;
+  overflow: hidden;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 64px;
+}
+
+.navbar, .navbar a, .navbar img.logo, .navbar-popup-links {
+  transition: all 0.3s ease;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.navbar a:hover {
+  background-color: #f2f2f2;
+  color: #1B1B24;
+}
+
+.navbar a.left{
+  margin: 0;
+  padding: 5.75px;
+  padding-left:16px;
+}
+.navbar a.left:hover{
+  background-color: inherit;
+}
+
+.navbar a.left:hover img.logo {
+  filter: invert(100%) sepia(4%) saturate(188%) hue-rotate(213deg) brightness(115%) contrast(90%) drop-shadow(0 0 10px #FFAAAA);
+}
+
+.navbar img.logo {
+  height: 44px;
+}
+
+.navbar a.left.active img.logo{
+  filter: invert(100%) sepia(4%) saturate(188%) hue-rotate(213deg) brightness(115%) contrast(90%);
+}
+
+.navbar a.left.active{
+  background-color: inherit;
+}
+
+.navbar a.active{
+  color: #24242D;
+  background-color: #FFAAAA;
+}
+
+.navbar-links{
+  display: flex;
+  gap: 0rem;
+  align-items: center;
+}
+
+.navbar-menu{
+  padding: 0;
+  padding-right: 16px;
+  margin: 0;
+}
+
+.navbar-links, .navbar-menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu input{
+  height: 54px;
+}
+
+.home-content {
+  height: calc(100dvh - 64px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  animation: home-content 8s;
+}
+
+@keyframes home-content {
+  0% {opacity: 0%;}
+  25% {opacity: 100%;}
+}
+
+.home-content h1, .home-content h6 {
+  margin: 0;
+}
+
+.menu-button {
+  height: 40%;
+}
+
+.navbar-popup-links {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navbar-popup-links a{
+  color: #f2f2f2;
+  width: 100%;
+  padding: .5rem;
+  text-decoration: none;
+}
+
+.navbar-popup-links a:hover{
+  background-color: #f2f2f2;
+  color: #1B1B24;
+}
+
+.navbar-pos {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #1B1B24;
+  transition: all 0.3s ease;
+}
+
+.navbar-pos.scrolled {
+  background-color: rgba(17, 17, 26, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.content-body {
+  padding: 10px;
+}
+
+.content-body h1, h2, p{
+  margin: 0;
+}
+
+.box a {
+  float: right;
+  flex-wrap: wrap;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFAAAA;
+}
+
+.box a:hover {
+  text-decoration: underline;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  background-color: #1B1B24;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+}
+
+@media (max-width: 652px) {
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer {
+  background-color: #1B1B24;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+.routes {
+  flex: 1;
+}
+
+.footer img {
+  height: 25px;
+  opacity: 10%;
+  transition: all 0.3s ease;
+}
+
+.footer img:hover {
+  opacity: 100%;
+}
