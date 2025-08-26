@@ -127,14 +127,13 @@ body, header {
 }
 
 .home-text {
-  animation: home-spin 8s infinite ease-in-out;
+  animation: home-fade-in 4s;
 
 }
 
-@keyframes home-spin {
-  0% {font-size: 2rem; transform: rotate(0deg);}
-  50% {font-size: 2.1rem; transform: rotate(1deg);}
-  100% {font-size: 2rem; transform: rotate(0deg);}
+@keyframes home-fade-in {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
 }
 
 .home-content h1, .home-content h6 {
