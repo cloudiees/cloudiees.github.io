@@ -149,12 +149,14 @@ body, header {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 }
 
 .navbar-popup-links a{
   color: #f2f2f2;
   width: 100%;
-  padding: 5dvh;
+  padding: 1.5rem;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
