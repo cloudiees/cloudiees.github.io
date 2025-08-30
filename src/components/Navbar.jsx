@@ -2,7 +2,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import Logo from "../assets/logotrimmed.png"
 import { useEffect, useState } from "react"
 import MenuIcon from "../assets/menuIcon.svg"
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation, scale } from "framer-motion";
 
 
 function Navbar() {
@@ -38,7 +38,12 @@ function Navbar() {
   return (
     <div className={`navbar-pos ${scrolled ? 'scrolled' : ''}`}>
       <div className='navbar'>
-        <CustomLink to="/" className="left"><img src={Logo} className="logo"></img></CustomLink>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <CustomLink to="/" className="left"><img src={Logo} className="logo"></img></CustomLink>
+        </motion.div>
         {useDefaultLayout ? <FullSizedComponent setShowElement={setShowElement} setScrolled={setScrolled} /> : <MenuComponent setShowElement={setShowElement} showElement={showElement} />}
       </div>
       <div className="navbar-popup-links">
@@ -71,7 +76,7 @@ function FullSizedComponent({ setShowElement, setScrolled }) {
         setScrolled(false);
         window.scrollTo(0, 0);
       }}>Links</CustomLink>
-    </div>
+    </div >
   );
 }
 
@@ -87,36 +92,35 @@ function MenuComponent({ showElement, setShowElement }) {
 // Small window navigation popup menu
 function MenuPopup({ setShowElement, setScrolled }) {
   return (
-    
-      <motion.div
-        layout
-        initial={{ maxHeight: 0, opacity: 0 }}
-        animate={{ maxHeight: "21.5rem", opacity: 1 }}
-        exit={{ maxHeight: 0, opacity: 0 }}
-        transition={{ duration: .4, ease: "easeInOut" }}
-        style={{ display: 'flex', flexDirection: 'column' }}
-      >
-        <CustomLink to="/about" onClick={() => {
-          setShowElement(false);
-          setScrolled(false);
-          window.scrollTo(0, 0);
-        }}>About Me</CustomLink>
-        <CustomLink to="/projects" onClick={() => {
-          setShowElement(false);
-          setScrolled(false);
-          window.scrollTo(0, 0);
-        }}>Projects</CustomLink>
-        <CustomLink to="/experience" onClick={() => {
-          setShowElement(false);
-          setScrolled(false);
-          window.scrollTo(0, 0);
-        }}>Experience</CustomLink>
-        <CustomLink to="/links" onClick={() => {
-          setShowElement(false);
-          setScrolled(false);
-          window.scrollTo(0, 0);
-        }}>Links</CustomLink>
-      </motion.div>
+    <motion.div
+      layout
+      initial={{ maxHeight: 0, opacity: 0 }}
+      animate={{ maxHeight: "21.5rem", opacity: 1 }}
+      exit={{ maxHeight: 0, opacity: 0 }}
+      transition={{ duration: .4, ease: "easeInOut" }}
+      style={{ display: 'flex', flexDirection: 'column' }}
+    >
+      <CustomLink to="/about" onClick={() => {
+        setShowElement(false);
+        setScrolled(false);
+        window.scrollTo(0, 0);
+      }}>About Me</CustomLink>
+      <CustomLink to="/projects" onClick={() => {
+        setShowElement(false);
+        setScrolled(false);
+        window.scrollTo(0, 0);
+      }}>Projects</CustomLink>
+      <CustomLink to="/experience" onClick={() => {
+        setShowElement(false);
+        setScrolled(false);
+        window.scrollTo(0, 0);
+      }}>Experience</CustomLink>
+      <CustomLink to="/links" onClick={() => {
+        setShowElement(false);
+        setScrolled(false);
+        window.scrollTo(0, 0);
+      }}>Links</CustomLink>
+    </motion.div>
   );
 }
 
@@ -132,10 +136,20 @@ function CustomLink({ to, children, className = "", ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
   const combinedClassName = className + " " + (isActive ? "active" : "")
+  const testVar = {
+    default: { scale: 1 },
+    hover: { scale: 1.1 },
+    onClick: { scale: 0.9 }
+  }
   return (
-    <Link to={to} {...props} className={combinedClassName}>
-      {children}
-    </Link>
+    <motion.div initial="default" whileHover="hover" whileTap="onClick" className="navbar-links">
+      <Link to={to} {...props} className={combinedClassName}>
+        <motion.div variants={testVar}>
+          {children}
+        </motion.div>
+      </Link>
+    </motion.div>
+
   )
 }
 

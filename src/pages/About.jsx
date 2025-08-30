@@ -1,5 +1,5 @@
-export default function About(){
-    return(
+export default function About() {
+    return (
         <div>
             About
             <p>
@@ -9,9 +9,9 @@ export default function About(){
                 whole lot of filler for testing<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                 whole lot of filler for testing<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                 whole lot of filler for testing<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                
+
             </p>
         </div>
-        
+
     )
 }
