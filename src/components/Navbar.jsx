@@ -38,12 +38,7 @@ function Navbar() {
   return (
     <div className={`navbar-pos ${scrolled ? 'scrolled' : ''}`}>
       <div className='navbar'>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <CustomLink to="/" className="left"><img src={Logo} className="logo"></img></CustomLink>
-        </motion.div>
+        <CustomLink to="/" className="left"><img src={Logo} className="logo"></img></CustomLink>
         {useDefaultLayout ? <FullSizedComponent setShowElement={setShowElement} setScrolled={setScrolled} /> : <MenuComponent setShowElement={setShowElement} showElement={showElement} />}
       </div>
       <div className="navbar-popup-links">
@@ -138,13 +133,12 @@ function CustomLink({ to, children, className = "", ...props }) {
   const combinedClassName = className + " " + (isActive ? "active" : "")
   const testVar = {
     default: { scale: 1 },
-    hover: { scale: 1.1 },
     onClick: { scale: 0.9 }
   }
   return (
-    <motion.div initial="default" whileHover="hover" whileTap="onClick" className="navbar-links">
+    <motion.div initial="default"  whileTap="onClick" className="navbar-links">
       <Link to={to} {...props} className={combinedClassName}>
-        <motion.div variants={testVar}>
+        <motion.div variants={testVar} transition={{ ease: "easeInOut", duration: .05 }}>
           {children}
         </motion.div>
       </Link>
