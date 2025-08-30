@@ -32,13 +32,13 @@ function App() {
 }
 
 const pageVariants = {
-  initial: { opacity: 0, y: 50 },
+  initial: { opacity: 0, y: 15 },
   in: { opacity: 1, y: 0 },
-  out: { opacity: 0, y: -50 }
+  out: { opacity: 0, y: -15 }
 };
 
 const pageTransition = {
-  duration: 0.4
+  duration: 0.475
 };
 
 function PageWrapper({ children }) {
