@@ -38,7 +38,7 @@ const pageVariants = {
 };
 
 const pageTransition = {
-  duration: 0.5
+  duration: 0.4
 };
 
 function PageWrapper({ children }) {

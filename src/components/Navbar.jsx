@@ -131,14 +131,14 @@ function CustomLink({ to, children, className = "", ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
   const combinedClassName = className + " " + (isActive ? "active" : "")
-  const testVar = {
+  const linkVariants = {
     default: { scale: 1 },
     onClick: { scale: 0.9 }
   }
   return (
     <motion.div initial="default"  whileTap="onClick" className="navbar-links">
       <Link to={to} {...props} className={combinedClassName}>
-        <motion.div variants={testVar} transition={{ ease: "easeInOut", duration: .05 }}>
+        <motion.div variants={linkVariants} transition={{ scale: {type: "spring", visualDuration: .25, bounce: .75} }}>
           {children}
         </motion.div>
       </Link>
