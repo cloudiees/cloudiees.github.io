@@ -26,7 +26,7 @@ function App() {
           </Routes>
         </div>
       </AnimatePresence>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
