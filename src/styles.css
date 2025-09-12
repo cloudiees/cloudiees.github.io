@@ -15,6 +15,18 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-wrap: break-word;
+}
+
+a {
+  color: #FFAAAA;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 body,
@@ -58,6 +70,17 @@ p {
   margin: 10px;
 }
 
+.box-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.box-grid > .box {
+  flex: 1 1 47.5%;
+  box-sizing: border-box;
+}
+
 .page-layout {
   display: flex;
   flex-direction: column;
@@ -66,4 +89,11 @@ p {
 
 .routes {
   flex: 1;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #FFAAAA;
+  border-radius: 10px;
 }
