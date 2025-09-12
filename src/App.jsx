@@ -1,12 +1,12 @@
-import "./styles.css";
-import Navbar from "./components/Navbar";
+/* eslint-disable no-unused-vars */
+import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes, useLocation } from "react-router-dom";
-import About from "./pages/About";
-import Links from "./pages/Links";
-import Projects from "./pages/Projects";
-import Experience from "./pages/Experience";
-import Home from "./pages/Home";
-import Footer from "./components/Footer";
+import About from "./components/pages/About/About";
+import Links from "./components/pages/Links/Links";
+import Projects from "./components/pages/Projects/Projects";
+import Experience from "./components/pages/Experience/Experience";
+import Home from "./components/pages/Home/Home";
+import Footer from "./components/Footer/Footer";
 import { AnimatePresence, motion } from "framer-motion"
 
 function App() {

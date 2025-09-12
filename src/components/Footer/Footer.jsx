@@ -1,4 +1,5 @@
-import GithubLogo from "../assets/github-mark-white.png"
+import GithubLogo from "../../assets/github-mark-white.png"
+import "./Footer.css"
 
 export default function Footer() {
     return (
