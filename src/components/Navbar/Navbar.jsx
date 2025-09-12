@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
-import Logo from "../assets/logotrimmed.png"
+import Logo from "../../assets/logotrimmed.png"
 import { useEffect, useState } from "react"
-import MenuIcon from "../assets/menuIcon.svg"
+import MenuIcon from "../../assets/menuIcon.svg"
 import { motion, AnimatePresence, useAnimation, scale } from "framer-motion";
-
+import "./Navbar.css"
 
 function Navbar() {
   // Used to show menu popup for small window view
@@ -131,18 +132,10 @@ function CustomLink({ to, children, className = "", ...props }) {
   const resolvedPath = useResolvedPath(to)
   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
   const combinedClassName = className + " " + (isActive ? "active" : "")
-  const linkVariants = {
-    default: { scale: 1 },
-    onClick: { scale: 0.9 }
-  }
   return (
-    <motion.div initial="default"  whileTap="onClick" className="navbar-links">
-      <Link to={to} {...props} className={combinedClassName}>
-        <motion.div variants={linkVariants} transition={{ scale: {type: "spring", visualDuration: .25, bounce: .75} }}>
-          {children}
-        </motion.div>
-      </Link>
-    </motion.div>
+    <Link to={to} {...props} className={combinedClassName}>
+      {children}
+    </Link>
 
   )
 }

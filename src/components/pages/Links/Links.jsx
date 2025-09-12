@@ -1,3 +1,5 @@
+import "./Links.css"
+
 export default function Links() {
     return (
         <div className="content-body">
