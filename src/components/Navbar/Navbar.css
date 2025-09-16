@@ -5,14 +5,14 @@
   top: 0;
   position: sticky;
   overflow: hidden;
-  font-size: 20px;
+  font-size: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 64px;
+  height: 4rem;
 }
 
 .navbar,
@@ -51,7 +51,7 @@
 }
 
 .navbar img.logo {
-  height: 44px;
+  height: 2.75rem;
 }
 
 .navbar a.left.active img.logo {
@@ -88,7 +88,7 @@
 }
 
 .navbar-menu input {
-  height: 54px;
+  height: 3.375rem;
 }
 
 .menu-button {

@@ -22,13 +22,30 @@ export default function About() {
 
             <MiniHeaderComponent title="Gaming" />
             <div className="box">
-
+                Gaming might not seem like a defining part of who I am, but it has actually sparked many of my skills and interests. For example, my time playing Fortnite led me to explore creative tools like Blender and Photoshop, where I made custom character renders. More recently, my passion for osu!, a rhythm game, inspired me to dive into SQL and Discord integrations. I wanted to build an auxiliary program for osu! that supports a custom scoring algorithm I developed. You can find more details about this project on my Projects page.
             </div>
 
             <MiniHeaderComponent title="Keyboards" />
-            <div className="box-grid">
-                <div className="box">test</div>
-                <div className="box">bskdfjalsfjlksjdafklsjfasdlfjsakldfj</div>
+            <div>
+                <div className="box">
+                    Building custom keyboards has been more than just a hobby for me, it's been a hands-on way to learn and grow. Each build presented unique challenges, from troubleshooting hardware to refining design choices, and every project taught me valuable lessons in problem-solving, patience, and attention to detail. In this section, I'll share some of the keyboards I've built and the key takeaways I gained from each one.
+                </div>
+                <div className="box-grid">
+                    <div className="box">test</div>
+                    <div className="box">bskdfjalsfjlksjdafklsjfasdlfjsakldfj</div>
+                </div>
+                <div className="box-grid">
+                    <div className="box">test</div>
+                    <div className="box">bskdfjalsfjlksjdafklsjfasdlfjsakldfj</div>
+                </div>
+                <div className="box-grid">
+                    <div className="box">test</div>
+                    <div className="box">bskdfjalsfjlksjdafklsjfasdlfjsakldfj</div>
+                </div>
+                <div className="box-grid">
+                    <div className="box">test</div>
+                    <div className="box">bskdfjalsfjlksjdafklsjfasdlfjsakldfj</div>
+                </div>
             </div>
         </div>
 

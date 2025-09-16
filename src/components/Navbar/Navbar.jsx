@@ -10,17 +10,17 @@ function Navbar() {
   // Used to show menu popup for small window view
   const [showElement, setShowElement] = useState(false);
   // Minimum width for default view to be enabled
-  const MIN_DEFAULT_WIDTH = 652;
   // Used to determine whether to use the small window view
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [useDefaultLayout, setUseDefaultLayout] = useState(window.innerWidth >= MIN_DEFAULT_WIDTH);
+  const [useDefaultLayout, setUseDefaultLayout] = useState(window.innerWidth >= window.innerHeight);
   // Resize handling
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
+      const height = window.innerHeight;
       setWindowWidth(width)
       console.log(width)
-      setUseDefaultLayout(width >= MIN_DEFAULT_WIDTH)
+      setUseDefaultLayout(width >= height)
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -39,7 +39,11 @@ function Navbar() {
   return (
     <div className={`navbar-pos ${scrolled ? 'scrolled' : ''}`}>
       <div className='navbar'>
-        <CustomLink to="/" className="left"><img src={Logo} className="logo"></img></CustomLink>
+        <CustomLink to="/" className="left" onClick={() => {
+          setShowElement(false);
+          setScrolled(false);
+          window.scrollTo(0, 0);
+        }}><img src={Logo} className="logo"></img></CustomLink>
         {useDefaultLayout ? <FullSizedComponent setShowElement={setShowElement} setScrolled={setScrolled} /> : <MenuComponent setShowElement={setShowElement} showElement={showElement} />}
       </div>
       <div className="navbar-popup-links">
@@ -94,7 +98,7 @@ function MenuPopup({ setShowElement, setScrolled }) {
       animate={{ maxHeight: "21.5rem", opacity: 1 }}
       exit={{ maxHeight: 0, opacity: 0 }}
       transition={{ duration: .4, ease: "easeInOut" }}
-      style={{ display: 'flex', flexDirection: 'column' }}
+      style={{ display: 'flex', flexDirection: 'column'}}
     >
       <CustomLink to="/about" onClick={() => {
         setShowElement(false);

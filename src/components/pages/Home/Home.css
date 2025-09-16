@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 .home-content {
-  height: calc(100dvh - 64px);
+  height: calc(100dvh - 4rem);
   display: flex;
   flex-direction: column;
   gap: 0;
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 2rem;
+  font-size: 5vw;
   position: relative;
   z-index: -1;
 }
