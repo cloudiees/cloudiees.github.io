@@ -1,27 +1,36 @@
-import { useForm } from "react-hook-form";
-import HCaptcha from '@hcaptcha/react-hcaptcha';
 import "./Contact.css"
-import { Glow } from "@codaworks/react-glow";
+import React from "react";
 
 export default function Contact() {
-  const { handleSubmit, setValue } = useForm();
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
-  };
+  const [result, setResult] = React.useState("");
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
 
-    await fetch("https://api.web3forms.com/submit", {
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: data
-    }).then((res) => res.json());
-  }
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
 
   return (
     <div className="box">
       <h1>Contact Me</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="input-container">
+      <form onSubmit={onSubmit} className="input-container">
         <div className="small-input-container">
           <div className="input-label">
             <span>Name</span>
@@ -33,13 +42,9 @@ export default function Contact() {
           </div>
         </div>
         <textarea name="message" className="input-big" placeholder="Enter your message" required></textarea>
-        <HCaptcha
-          sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-          reCaptchaCompat={false}
-          onVerify={onHCaptchaChange}
-        />
         <button type="submit">Submit Form</button>
       </form>
+      <span>{result}</span>
     </div>
   );
 }
