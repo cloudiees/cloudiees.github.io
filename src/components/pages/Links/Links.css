@@ -1,0 +1,71 @@
+.glow-button {
+    border-style: solid;
+    border-color: #181820;
+    padding: 0.5rem;
+    border-radius: 25px;
+    transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+    background-color: #1B1B24;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+[glow] .glow-button {
+    background-color: var(--glow-color);
+    border-color: var(--glow-color);
+}
+
+.glow-button-link {
+    color: white;
+    font-size: 3rem;
+}
+
+.glow-button-link:hover {
+    text-decoration: none;
+}
+
+.glow-button-img {
+    height: 3rem;
+}
+
+.glow-button-img-disabled {
+    height: 3rem;
+    opacity: 25%;
+}
+
+.glow-button-disabled {
+    border-style: solid;
+    border-color: #181820;
+    padding: 0.5rem;
+    border-radius: 25px;
+    transition: box-shadow 0.2s ease, text-shadow 0.2s ease;
+    background: #1B1B24;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.glow-button-disabled>span {
+    opacity: 25%;
+}
+
+[glow] .glow-button-disabled {
+    background-color: var(--glow-color);
+    border-color: var(--glow-color);
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 1.5rem;
+    margin: 1rem;
+}
+
+.button-grid>a {
+    width: 100%;
+}
+
+span {
+    z-index: 1;
+}

@@ -72,10 +72,10 @@ function FullSizedComponent({ setShowElement, setScrolled }) {
         setScrolled(false);
         window.scrollTo(0, 0);
       }}>Experience</CustomLink>
-      <CustomLink to="/links" onClick={() => {
+      <CustomLink to="/connect" onClick={() => {
         setScrolled(false);
         window.scrollTo(0, 0);
-      }}>Links</CustomLink>
+      }}>Connect</CustomLink>
     </div >
   );
 }
@@ -115,11 +115,11 @@ function MenuPopup({ setShowElement, setScrolled }) {
         setScrolled(false);
         window.scrollTo(0, 0);
       }}>Experience</CustomLink>
-      <CustomLink to="/links" onClick={() => {
+      <CustomLink to="/connect" onClick={() => {
         setShowElement(false);
         setScrolled(false);
         window.scrollTo(0, 0);
-      }}>Links</CustomLink>
+      }}>Connect</CustomLink>
     </motion.div>
   );
 }
