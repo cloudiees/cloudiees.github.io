@@ -2,7 +2,7 @@
   "name": "react",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://cloudiees.github.io/personal-site/",
+  "homepage": "https://cloudiees.github.io/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
