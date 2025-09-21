@@ -1,38 +1,71 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import "./Contact.css";
 
 export default function Contact() {
   const [result, setResult] = useState("");
+  const formRef = useRef();
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
     setResult("Sending...");
 
-    const formData = new FormData(event.target);
-    formData.append("access_key", "YOUR_ACCESS_KEY"); // replace with real key
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-    if (data.success) {
-      setResult("Form Submitted Successfully 🎉");
-      event.target.reset();
-    } else {
-      setResult(data.message);
-    }
+    emailjs
+      .sendForm(
+        "service_zfhycog",
+        "template_nae0xoj",
+        formRef.current,
+        "u7gh_I-J04JQQYi6U"
+      )
+      .then(
+        () => {
+          setResult("Form Submitted Successfully 🎉");
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setResult("An error occurred. Please try again.");
+        }
+      );
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required />
-      <button type="submit">Send</button>
-      <p>{result}</p>
-    </form>
+    <div className="box">
+      <h1>Contact Me</h1>
+      <form ref={formRef} onSubmit={sendEmail} className="input-container">
+        <div className="small-input-container">
+          <div className="input-label">
+            <span>Name</span>
+            <input
+              type="text"
+              name="from_name"
+              className="input-small"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div className="input-label">
+            <span>Email</span>
+            <input
+              type="email"
+              name="reply_to"
+              className="input-small"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+        </div>
+
+        <textarea
+          name="message"
+          className="input-big"
+          placeholder="Enter your message"
+          required
+        ></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <span>{result}</span>
+    </div>
   );
 }
