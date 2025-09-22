@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -33,7 +32,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  padding-top: 32px;
+  padding-top: 2rem;
 }
 
 body,
@@ -42,7 +41,7 @@ header {
 }
 
 .content-body {
-  padding: 10px;
+  padding: .625rem;
 }
 
 .content-body h1,
@@ -65,9 +64,9 @@ p {
 
 .box {
   background-color: #1B1B24;
-  border-radius: 15px;
-  padding: 15px;
-  margin: 10px;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: .5rem;
 }
 
 .box-grid {
@@ -93,7 +92,7 @@ p {
 
 hr {
   border: none;
-  height: 4px;
+  height: .25rem;
   background-color: #FFAAAA;
-  border-radius: 10px;
+  border-radius: .625rem;
 }

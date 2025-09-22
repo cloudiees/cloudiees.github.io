@@ -26,8 +26,8 @@ export default function Projects() {
 
             <div className="box">
                 <div className="project-header">
-                    <h2>Weather App (?)</h2>
-                    <a href="https://github.com/cloudiees/StudyTimer" target="_blank">Github Repo (I don't know if I am allowed to shared this repo or not) so it links to the wrong thing right now</a>
+                    <h2>Weather App</h2>
+                    <a href="https://github.com/cloudiees/cs342-weather-app" target="_blank">Github Repo</a>
                 </div>
                 <span>TODO</span>
             </div>
@@ -36,6 +36,30 @@ export default function Projects() {
                 <div className="project-header">
                     <h2>Study Timer</h2>
                     <a href="https://github.com/cloudiees/StudyTimer" target="_blank">Github Repo</a>
+                </div>
+                <span>TODO</span>
+            </div>
+
+            <div className="box">
+                <div className="project-header">
+                    <h2>Connect4</h2>
+                    <a href="https://github.com/cloudiees/cs342-connect4" target="_blank">Github Repo</a>
+                </div>
+                <span>TODO</span>
+            </div>
+
+            <div className="box">
+                <div className="project-header">
+                    <h2>PrayerReminder</h2>
+                    <a href="https://github.com/cloudiees/PrayerReminder" target="_blank">Github Repo</a>
+                </div>
+                <span>TODO</span>
+            </div>
+
+            <div className="box">
+                <div className="project-header">
+                    <h2>Brython Snake</h2>
+                    <a href="https://github.com/cloudiees/Brython-snake" target="_blank">Github Repo</a>
                 </div>
                 <span>TODO</span>
             </div>

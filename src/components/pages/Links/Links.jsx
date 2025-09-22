@@ -4,7 +4,7 @@ import { Glow } from "@codaworks/react-glow"
 import { motion } from "framer-motion"
 import GithubLogo from "../../../assets/github-mark-white.png"
 import LinkedInLogo from "../../../assets/linkedin-logo-white.svg"
-import Contact from "../../Web3Forms/Contact.jsx"
+import Contact from "../../ContactForm/Contact.jsx"
 
 export default function Links() {
     return (
