@@ -96,3 +96,9 @@ hr {
   background-color: #FFAAAA;
   border-radius: .625rem;
 }
+
+.box-line {
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+}

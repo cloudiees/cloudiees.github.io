@@ -2,3 +2,8 @@
     color: #94949D;
     font-style: italic;
 }
+
+h3 {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
