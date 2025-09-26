@@ -36,10 +36,10 @@ export default function About() {
             <div>
                 <div className="box">
                     <span>
-                        Building custom keyboards has been more than just a hobby for me, it's been a hands-on way to learn and grow. Each build presented unique challenges, from troubleshooting hardware to refining design choices, and every project taught me valuable lessons in problem-solving, patience, and attention to detail. In this section, I'll share some of the keyboards I've built and the key takeaways I gained from each one.
+                        Building custom keyboards has been more than just a hobby for me, it's been a hands-on way to learn and grow. Each build presented unique challenges, from troubleshooting hardware to refining design choices, and every project taught me valuable lessons in problem-solving, patience, and attention to detail. In this section, I'll share some of the keyboards I've built and the key takeaways I gained from each one. #TODO
                     </span>
                 </div>
-                <div className="box-grid">
+                {/* <div className="box-grid">
                     <div className="box">
                         <h3>The First</h3>
                         <img src={placeholderImg} className="kb-img" />
@@ -102,7 +102,7 @@ export default function About() {
                             The daily driver
                         </span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
 
