@@ -1,5 +1,5 @@
 import "./About.css"
-import placeholderImg from "../../../assets/kbplaceholder.jpg";
+// import kbplaceholder from "../../../assets";
 
 export default function About() {
     return (
