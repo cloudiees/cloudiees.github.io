@@ -80,6 +80,21 @@ export default function Projects() {
                     </span>
                 </div>
             </div>
+            <h1>Contributions</h1>
+            <hr />
+            <div className="box-line">
+                <div className="box">
+                    <div className="project-header">
+                        <h2>FSM Engine</h2>
+                        <a href="https://github.com/karthik-saiharsh/fsm-engine" target="_blank">Github Repo</a>
+                    </div>
+                    <span>
+                        I contributed to an open source project on GitHub that implements a web-based FSM editor. My work focused on improving the usability and robustness of the editor. Specifically, I added safeguards to prevent duplicate transitions between states, introduced intuitive node deselection behavior when clicking on the background, and implemented deleting transitions to make editing smoother.
+                        <br /><br />
+                        This project gave me valuable experience working in a shared codebase, following GitHub workflows such as pull requests and code reviews, and collaborating with other developers in an open source setting.
+                    </span>
+                </div>
+            </div>
         </div>
     );
 }
