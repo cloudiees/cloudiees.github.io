@@ -26,6 +26,7 @@
     "react-markdown": "^10.1.0",
     "react-md": "^6.2.4",
     "react-router-dom": "^7.6.0",
+    "remark-gfm": "^4.0.1",
     "sass": "^1.90.0"
   },
   "devDependencies": {

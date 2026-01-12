@@ -1,0 +1,1 @@
+Building custom keyboards has been more than just a hobby for me, it's been a hands-on way to learn and grow. Each build presented unique challenges, from troubleshooting hardware to refining design choices, and every project taught me valuable lessons in problem-solving, patience, and attention to detail.

@@ -22,7 +22,7 @@ export default function Experience() {
             <div className="box-line">
                 <div className="box">
                     <h1>University of Illinois Chicago</h1>
-                    <span className="mini-text">Bachelors in Computer Science (August 2023-Present)</span>
+                    <span className="mini-text">Bachelors & Masters in Computer Science (August 2023-Present)</span>
                     <br />
                     <span>
                         <h3>Relevant Coursework</h3>
